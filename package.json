@@ -1,0 +1,13 @@
+{
+  "name": "project_oc_3",
+  "version": "1.0.0",
+  "description": "Project \"ohmyfood",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch main.scss:style.css --style expanded"},
+  "author": "Simon Froger",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "4.6.0"
+  }
+}

@@ -125,7 +125,7 @@ a,a:visited
 .nav
 {
     text-align: center;
-    padding:0.5rem 0rem 0.5rem 0rem;
+    padding: 1rem 0rem 0.5rem 0rem;
     box-shadow: $box-shadow 0.2rem 0.2rem 0.2rem 0rem;
     &__home
     {
@@ -279,6 +279,9 @@ header,main,footer
     margin-top: 0.2rem;
     text-align: center;
     font-weight: bold;
+    box-shadow: 0rem -0.2rem 0.2rem 0rem darken($color: #f2f2f2, $amount: 15);
+    -webkit-box-shadow: 0rem -0.2rem 0.2rem 0rem darken($color: #f2f2f2, $amount: 15);
+    -moz-box-shadow: 0rem -0.2rem 0.2rem 0rem darken($color: #f2f2f2, $amount: 15);
     border-bottom: darken($color: white, $amount: 10) 0.1rem solid;
     &::before
     {
@@ -290,6 +293,10 @@ header,main,footer
     {
     text-align: center;
     margin: 2.5rem 2.1rem 0rem 2.1rem;
+    & .article-title
+    {
+        text-align: center;
+    }
     p
     {
         color: lighten($color: #000000, $amount: 35);
@@ -300,118 +307,104 @@ header,main,footer
 {
     margin: 3rem 0rem 6rem 0rem;
     text-align: center;
+    & li
+    {
+        margin: 2.2rem 0rem 2.2rem 1rem;
+    }
     &__flexbox
     {
         display: flex;
         flex-flow: nowrap column;
-        justify-content: space-evenly;
+        justify-content: center;
         list-style: none;
         padding: 0rem;
-    }
-    li
-    {
-        margin: 2.2rem 0rem 2.2rem 1rem;
-        width: 20rem;
-    }
-}
-.how-to-order__list-number
-{
-    font-size: 0.9rem;
-    background-color: $primary-color;
-    padding: 0.2rem 0.4rem 0.1rem 0.4rem;
-    color: $alt-font-color;
-    border-radius: 4rem;
-    left: 0.5rem;
-    position:relative;
-} 
-.how-to-order__box
-{
-    padding: 1.5rem 4rem 1.5rem 2rem;
-    background-color: $background-color;
-    border: 0.1rem transparent lighten($color: $tertiary-color, $amount: 10);
-    border-radius: 1rem;
-    margin-left: 0rem;
-    font-size: 0.9rem;
-    font-weight: bold;
-    box-shadow: $box-shadow;
-    &--1::before
-    {
-        @include icon;
-        content:"\f3cd";
-    }
-    &--2::before
-    {
-        @include icon;
-        content: "\f03a";
-    }
-    &--3
-    {
-        background-color: darken($color: $background-color, $amount: 2);
-    }
-    &--3::before
-    {
-        @include icon;
-        content: "\f54e";
-        color: $primary-color;
+        &__list-number
+        {
+            font-size: 0.9rem;
+            background-color: $primary-color;
+            padding: 0.2rem 0.4rem 0.1rem 0.4rem;
+            color: $alt-font-color;
+            border-radius: 4rem;
+            left: 0.5rem;
+            position:relative;
+        }
+        &__box
+        {
+            padding: 1.5rem 4rem 1.5rem 2rem;
+            background-color: $background-color;
+            border: 0.1rem transparent lighten($color: $tertiary-color, $amount: 10);
+            border-radius: 1rem;
+            margin-left: 0rem;
+            font-size: 0.9rem;
+            font-weight: bold;
+            box-shadow: $box-shadow;
+            &--1::before
+            {
+                @include icon;
+                content:"\f3cd";
+            }
+            &--2::before
+            {
+                @include icon;
+                content: "\f03a";
+            }
+            &--3
+            {
+                background-color: darken($color: $background-color, $amount: 5);
+            }
+            &--3::before
+            {
+                @include icon;
+                content: "\f54e";
+                color: $primary-color;
+            }
+        }
     }
 }
+
 .restaurants
 {
     background-color: $background-color;
     padding: 2rem 0.5rem 2rem 0rem;
-}
-.restaurants__flexbox
-{
-    display: flex;
-    flex-flow: column nowrap;
-}
-.restaurants__box
-{
-    width: fit-content;
-    height: 15.8rem;
-    margin: 1rem;
-    background-color: white;
-    border-radius: 1.5rem;
-    box-shadow: $box-shadow;
-    @include hover-after;
-    &:hover
+    &__flexbox
     {
-        @include hover-effect()
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        &__box
+        {
+            width: fit-content;
+            height: 15.8rem;
+            margin: 1rem auto 1rem auto;
+            background-color: white;
+            border-radius: 1.5rem;
+            box-shadow: $box-shadow;
+            @include hover-after;
+            &:hover
+            {
+                @include hover-effect()
+            }
+            &__title
+            {
+            margin: 1rem 0rem 0.5rem 0rem;
+            }
+            &__location
+            {
+                margin: 0.5rem 0rem 0rem 0rem;
+                font-weight: normal;
+            }
+            &__new
+            {
+                position: relative;
+                top: -14rem;
+                left: 15rem;
+                background-color: $tertiary-color;
+                color: darken($color: $tertiary-color, $amount: 40);
+                font-size: 0.8rem;
+                padding: 0.3rem 0.5rem;
+            }
+        }
     }
-}
-figure
-{
-    margin: 0rem;
-}
-figure img
-{
-    width:21rem;
-    height: 10.6rem;
-    object-fit: cover;
-    border-radius: 1.5rem 1.5rem 0rem 0rem;
-}
-figcaption
-{
-    margin: 0.5rem 0rem 0rem 0.5rem;
-}
-.restaurants__title
-{
-margin: 1rem 0rem 0.5rem 0rem;
-}
-.restaurants__location
-{
-    margin: 0.5rem 0rem 0rem 0rem;
-    font-weight: normal;
-}
-.restaurants__new
-{
-    position: relative;
-    top: -14rem;
-    left: 15rem;
-    background-color: $tertiary-color;
-    color: darken($color: $tertiary-color, $amount: 40);
-    font-size: 0.8rem;
-    padding: 0.3rem 0.5rem;
 }
 .empty
 {
@@ -437,6 +430,23 @@ margin: 1rem 0rem 0.5rem 0rem;
     transform: scale(0);
     transition: transform 500ms cubic-bezier(1,.16,.58,1.95);
 }
+
+figure
+{
+    margin: 0rem;
+}
+figure img
+{
+    width:21rem;
+    height: 10.6rem;
+    object-fit: cover;
+    border-radius: 1.5rem 1.5rem 0rem 0rem;
+}
+figcaption
+{
+    margin: 0.5rem 0rem 0rem 0.5rem;
+}
+
 /*footer*/
 footer
 {
@@ -731,6 +741,10 @@ footer .about li
     {
         flex-flow: row wrap;
         justify-content: space-evenly;
+        &__box
+        {
+            margin: 2rem;
+        }
     }
     .restaurant-intro
     {
@@ -763,13 +777,13 @@ footer .about li
     {
         & .logo
         {
-            margin-left: 50%;
+            margin-left: 47%;
         }
         & .about
         {
             display: flex;
             flex-flow: row nowrap;
-            justify-content: space-evenly;
+            justify-content: space-around;
             & li
             {
                 margin: 0rem;

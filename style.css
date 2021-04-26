@@ -73,10 +73,8 @@ a, a:visited {
   margin: 1rem 0rem 3.5rem 0rem;
   box-shadow: 0rem 0.2rem 0.5rem 0.2rem #d8d8d8;
   z-index: 1;
+  cursor: pointer;
   animation: after-animation 0.5s ease-in-out backwards;
-}
-.primary-button--restaurant {
-  margin-left: 30%;
 }
 .primary-button:hover {
   animation: hover-animation 0.5s ease-in-out both;
@@ -244,7 +242,7 @@ header, main, footer {
   text-align: center;
 }
 .how-to-order li {
-  margin: 2.2rem 0rem 2.2rem 1rem;
+  margin: 2.2rem 0rem 2.2rem 0rem;
 }
 .how-to-order__flexbox {
   display: flex;
@@ -265,7 +263,7 @@ header, main, footer {
 .how-to-order__flexbox__box {
   display: inline-block;
   width: 15rem;
-  padding: 1.5rem 4rem 1.5rem 2rem;
+  padding: 1.5rem 1.5rem 1.5rem 2rem;
   background-color: #f9f5f9;
   border: 0.1rem transparent #c1ede2;
   border-radius: 1rem;
@@ -291,7 +289,7 @@ header, main, footer {
   content: "";
 }
 .how-to-order__flexbox__box--3 {
-  background-color: #efe5ef;
+  background-color: #f2eafb;
 }
 .how-to-order__flexbox__box--3::before {
   font-family: "fontawesome";
@@ -338,6 +336,7 @@ header, main, footer {
   background-color: #99E2D0;
   color: #278870;
   font-size: 0.8rem;
+  font-weight: bold;
   padding: 0.3rem 0.5rem;
 }
 
@@ -406,6 +405,7 @@ footer .about li {
 .fa-utensils, .fa-hands-helping {
   margin-right: 0.5rem;
   font-size: 0.8rem;
+  color: white;
 }
 
 /*Restaurant menu*/
@@ -557,6 +557,11 @@ footer .about li {
   padding: 0.2rem;
   border-radius: 1rem;
 }
+.restaurant__menu__order-button {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
 
 @keyframes icon-animation {
   0% {
@@ -629,7 +634,7 @@ footer .about li {
   }
   .how-to-order__flexbox li {
     width: fit-content;
-    margin: 2rem 1rem 2rem 1rem;
+    margin: 2rem 0rem 2rem 0rem;
   }
 
   .restaurants__flexbox {
@@ -655,10 +660,6 @@ footer .about li {
     width: 100%;
   }
 
-  .primary-button--restaurant {
-    margin-left: 45%;
-  }
-
   footer .logo {
     margin-left: 47%;
   }
@@ -674,10 +675,6 @@ footer .about li {
 @media (min-width: 425px) and (max-width: 767px) {
   .restaurant__menu__flexbox__food-item {
     align-self: center;
-  }
-
-  .primary-button--restaurant {
-    margin-left: 43%;
   }
 
   footer .about {

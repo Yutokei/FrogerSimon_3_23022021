@@ -111,11 +111,8 @@ a,a:visited
     margin: 1rem 0rem 3.5rem 0rem;
     box-shadow: $box-shadow;
     z-index: 1;
+    cursor: $cursor;
     @include hover-after;
-    &--restaurant
-    {
-        margin-left:30%;
-    }
     &:hover
     {
         @include hover-effect();
@@ -309,7 +306,7 @@ header,main,footer
     text-align: center;
     & li
     {
-        margin: 2.2rem 0rem 2.2rem 1rem;
+        margin: 2.2rem 0rem 2.2rem 0rem;
     }
     &__flexbox
     {
@@ -332,7 +329,7 @@ header,main,footer
         {
             display: inline-block;
             width: 15rem;
-            padding: 1.5rem 4rem 1.5rem 2rem;
+            padding: 1.5rem 1.5rem 1.5rem 2rem;
             background-color: $background-color;
             border: 0.1rem transparent lighten($color: $tertiary-color, $amount: 10);
             border-radius: 1rem;
@@ -352,7 +349,7 @@ header,main,footer
             }
             &--3
             {
-                background-color: darken($color: $background-color, $amount: 5);
+                background-color: lighten($color: $primary-color, $amount: 35)
             }
             &--3::before
             {
@@ -402,6 +399,7 @@ header,main,footer
                 background-color: $tertiary-color;
                 color: darken($color: $tertiary-color, $amount: 40);
                 font-size: 0.8rem;
+                font-weight: bold;
                 padding: 0.3rem 0.5rem;
             }
         }
@@ -478,6 +476,7 @@ footer .about li
 {
     margin-right: 0.5rem;
     font-size: 0.8rem;
+    color: $alt-font-color;
 }
 
 /*Restaurant menu*/
@@ -646,6 +645,12 @@ footer .about li
                 }
         }
     }
+    &__order-button
+    {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
 }
 @keyframes icon-animation
 {
@@ -737,7 +742,7 @@ footer .about li
             & li
             {
                 width: fit-content;
-                margin: 2rem 1rem 2rem 1rem;
+                margin: 2rem 0rem 2rem 0rem;
             }
         }
     }
@@ -773,10 +778,6 @@ footer .about li
             }
         }
     }
-    .primary-button--restaurant
-    {
-        margin-left: 45%;
-    }
     footer
     {
         & .logo
@@ -803,10 +804,6 @@ footer .about li
         {
             align-self: center;
         }
-    }
-    .primary-button--restaurant
-    {
-        margin-left: 43%;
     }
     footer 
     {

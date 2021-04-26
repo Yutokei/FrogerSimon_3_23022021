@@ -31,6 +31,13 @@ $show-animation: false;
     animation: after-animation 0.5s ease-in-out backwards;
     
 }
+
+@mixin hover-effect 
+{
+    animation: hover-animation 0.5s ease-in-out both;    
+}
+
+/*Keyframes*/
 @keyframes after-animation
 {
     0%
@@ -46,10 +53,6 @@ $show-animation: false;
         box-shadow: $box-shadow;
     }
 }
-@mixin hover-effect 
-{
-    animation: hover-animation 0.5s ease-in-out both;    
-}
 @keyframes hover-animation
 {
     100%
@@ -57,6 +60,156 @@ $show-animation: false;
         transform: scale(1.05);
         filter: brightness(115%);
         box-shadow: 0.1rem 0.2rem 0.5rem 0.1rem darken($color: #d8d8d8, $amount: 40);
+    }
+}
+@keyframes loader__background
+{
+    0%
+    {
+        transform: scale(0.7);
+        opacity: 1;
+    }
+    50%
+    {
+        transform: scale(1.45);
+    }
+    85%
+    {
+        transform: scale(0.8);
+    }
+    85%
+    {
+        opacity: 1
+    }
+    99%
+    {
+        transform: scale(0.7);
+    }
+    100%
+    {
+        display: none;
+    }
+}
+@keyframes loader
+{
+    0%
+    {
+        transform: scale(0.9) rotate(-90deg);
+        opacity: 0.8;
+    }
+    40%
+    {
+        transform: scale(1.6);
+    }
+    50%
+    {
+        transform: scale(1.5) rotate(180deg);
+    }
+    80%
+    {
+        transform: scale(1.2);
+    }
+    88%
+    {
+        opacity: 0.8;
+    }
+    100%
+    {
+        transform: scale(0.9) rotate(280deg);
+    }
+}
+@keyframes page
+{
+    0%
+    {
+        opacity: 0;
+    }
+    99%
+    {
+        opacity: 0;
+    }
+    100%
+    {
+        opacity: 1;
+    }
+}
+
+@keyframes food-item__animation
+{
+    0%
+    {
+        transform:translatex(-5rem);
+        opacity: 0;
+    }
+    100%
+    {
+        transform:translatex(0rem);
+        opacity: 1;
+    }
+}
+
+@keyframes icon-animation
+{
+    0%
+    {
+        transform: rotate(-360deg) ;
+    }
+    20%
+    {
+        transform: rotate(-260deg);
+    }
+    40%
+    {
+        transform: rotate(-160deg);
+    }
+    60%
+    {
+        transform: rotate(-60deg) ;
+    }
+    80%
+    {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes ingredients-ellipsis
+{
+    0%
+    {
+        width: 16rem;
+    }
+    100%
+    {
+        width: 12rem;
+    }
+}
+
+@-webkit-keyframes animation-on-order {
+    0% 
+    { 
+        /*opacity: 0;*/ 
+        -webkit-transform: /*translateX(10%)*/ scaleX(0); 
+        -webkit-transform-origin: right;
+    }   
+  100% 
+    { 
+        /*opacity: 1; */
+        -webkit-transform: /*translateX(0)*/ scaleX(1); 
+        -webkit-transform-origin: right;
+    }
+}
+@-moz-keyframes animation-on-order {
+    0% 
+    { 
+        /*opacity: 0;*/
+        -moz-transform: /*translateX(10%)*/ scaleX(0); 
+        -webkit-transform-origin: right;
+    }   
+    100% 
+    {
+        /*opacity: 1;*/
+        -moz-transform: /*translateX(0)*/ scaleX(1); 
+        -webkit-transform-origin: right;
     }
 }
 
@@ -162,34 +315,7 @@ a,a:visited
     opacity: 0;
     position: sticky;
 }
-@keyframes loader
-{
-    0%
-    {
-        transform: scale(0.9) rotate(-90deg);
-        opacity: 0.8;
-    }
-    40%
-    {
-        transform: scale(1.6);
-    }
-    50%
-    {
-        transform: scale(1.5) rotate(180deg);
-    }
-    80%
-    {
-        transform: scale(1.2);
-    }
-    88%
-    {
-        opacity: 0.8;
-    }
-    100%
-    {
-        transform: scale(0.9) rotate(280deg);
-    }
-}
+
 .loader__background::after
 {
     content: "";
@@ -203,34 +329,7 @@ a,a:visited
     opacity: 0;
 
 }
-@keyframes loader__background
-{
-    0%
-    {
-        transform: scale(0.7);
-        opacity: 1;
-    }
-    50%
-    {
-        transform: scale(1.45);
-    }
-    85%
-    {
-        transform: scale(0.8);
-    }
-    85%
-    {
-        opacity: 1
-    }
-    99%
-    {
-        transform: scale(0.7);
-    }
-    100%
-    {
-        display: none;
-    }
-}
+
 .loader--full-height,.loader__background
 {
     align-items: center;
@@ -243,24 +342,10 @@ a,a:visited
     width: 10rem;
 }
 
-header,main,footer
+.index
 {
-    /*animation-name: page;*/
-    animation-duration: 2.9s;
-    animation-fill-mode: forwards;
-}
-@keyframes page
-{
-    0%
-    {
-        transform: translate x(-500%);
-        opacity: 0;
-    }
-    99%
-    {
-        transform: translate x(-500%);
-        opacity: 0;
-    }
+    animation: page 2.9s both;
+    opacity: 1;
 }
 
 /*main*/
@@ -520,17 +605,7 @@ footer .about li
         right: 1.9rem;
     }
 }
-@keyframes food-item__animation
-{
-    0%{
-        transform:translatex(-5rem);
-        opacity: 0;
-      }
-      100%{
-        transform:translatex(0rem);
-        opacity: 1;
-      }
-}
+
 .restaurant__menu
 {
     display: flex;
@@ -652,70 +727,6 @@ footer .about li
         justify-content: center;
     }
 }
-@keyframes icon-animation
-{
-    0%
-    {
-        transform: rotate(-360deg) ;
-    }
-    20%
-    {
-        transform: rotate(-260deg);
-    }
-    40%
-    {
-        transform: rotate(-160deg);
-    }
-    60%
-    {
-        transform: rotate(-60deg) ;
-    }
-    80%
-    {
-        transform: rotate(0deg);
-    }
-}
-
-@keyframes ingredients-ellipsis
-{
-    0%
-    {
-        width: 16rem;
-    }
-    100%
-    {
-        width: 12rem;
-    }
-}
-
-@-webkit-keyframes animation-on-order {
-    0% 
-    { 
-        /*opacity: 0;*/ 
-        -webkit-transform: /*translateX(10%)*/ scaleX(0); 
-        -webkit-transform-origin: right;
-    }   
-  100% 
-    { 
-        /*opacity: 1; */
-        -webkit-transform: /*translateX(0)*/ scaleX(1); 
-        -webkit-transform-origin: right;
-    }
-}
-@-moz-keyframes animation-on-order {
-    0% 
-    { 
-        /*opacity: 0;*/
-        -moz-transform: /*translateX(10%)*/ scaleX(0); 
-        -webkit-transform-origin: right;
-    }   
-    100% 
-    {
-        /*opacity: 1;*/
-        -moz-transform: /*translateX(0)*/ scaleX(1); 
-        -webkit-transform-origin: right;
-    }
-}
 
 
     /*media queries*/
@@ -819,5 +830,20 @@ footer .about li
                 white-space: nowrap;
             }
         }
+    }
+}
+@media (max-width:374px) 
+{
+    .restaurant__menu__flexbox__food-item
+    {
+        width: 16rem;
+    }
+    .restaurant__menu__flexbox__food-item__box__text__comment__ingredients
+    {
+        font-size: 0.6rem;
+    }
+    .far.fa-heart.empty--menu
+    {
+        right: -1rem;
     }
 }

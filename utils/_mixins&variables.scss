@@ -1,0 +1,35 @@
+
+/*colors and font*/
+$primary-color: #9356DC;
+$secondary-color: #FF79DA;
+$tertiary-color: #99E2D0;
+$alt-font-color: white;
+$light-font-color: lighten($color: #000000, $amount: 15);
+$background-color: #f9f5f9;
+$button-background: linear-gradient(0deg, rgba(147,86,220,0.9530864197530864) 34%, rgba(255,121,218,0.7975308641975308) 100%);
+$title-police:  'roboto black 900', sans-serif;
+$text-police: 'roboto light 300', sans-serif;
+$restaurant-police: 'Shrikhand', cursive;
+/**/
+$cursor: pointer;
+$box-shadow: 0rem 0.2rem 0.5rem 0.2rem #d8d8d8;
+$show-animation: false;
+
+/*mixin*/
+@mixin icon
+{
+    font-family: "fontawesome";
+    color: lighten($color: #000000, $amount: 40);
+    padding: 0rem 1rem 0rem 0.1rem;
+    font-size: 1.1rem;
+    width: 1rem;
+}
+@mixin hover-after {
+    animation: after-animation 0.5s ease-in-out backwards;
+    
+}
+
+@mixin hover-effect 
+{
+    animation: hover-animation 0.5s ease-in-out both;    
+}

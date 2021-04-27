@@ -1,0 +1,161 @@
+/*Restaurant pages*/
+.restaurant-intro
+{
+    position: relative;
+    figcaption
+    {
+        margin: 0rem;
+        height: 3rem;
+    }
+    &__image
+    {
+        width: 100%;
+        height: 16rem;
+        object-fit: cover;
+        opacity: 0.9;
+        border-radius: 0rem;
+    }
+    &__name
+    {
+        width: 100%;
+        text-align: center;
+        font-family: $restaurant-police;
+        font-size: 1.7rem;
+        border: solid $background-color ;
+        border-radius: 1.5rem;
+        padding: 0.5rem 0rem 0.5rem 0rem;
+        position: absolute;
+        bottom: 0.5rem;
+        right: 0rem;
+        background-color: $background-color;
+    }
+}
+.far.fa-heart.empty--menu
+{
+    top: 0rem;
+    right: -3.2rem;
+    & .fill--menu
+    {
+        right: 1.9rem;
+    }
+}
+
+.restaurant__menu
+{
+    display: flex;
+    flex-flow: nowrap column;
+    &__flexbox
+    {
+        display: flex;
+        flex-flow: nowrap column;
+        color: $light-font-color;
+        margin: 0.5rem 0rem 0.9rem 0rem;
+        &__title
+        {
+            font-weight: lighter;
+            margin: 0.5rem  0rem 1rem 1.3rem;
+            &__border
+            {
+                border-bottom: 0.2rem solid $tertiary-color ;
+                padding-bottom: 0.25rem;
+            }
+        }
+        &__food-item
+        {
+            box-shadow: $box-shadow;
+            width: 21rem;
+            height: 2.2rem;
+            align-self: center;
+            background-color: white;
+            border-radius: 1rem;
+            padding: 1rem 0rem 1rem 0.7rem;
+            margin: 0.5rem 0.5rem 0.5rem 1rem;
+            animation: food-item__animation 200ms ease-in-out;
+            animation-fill-mode: both;
+            -webkit-animation-fill-mode: both;
+            animation-delay: 250ms;
+                 @for $i from 1 through 5
+                 {
+                    &:nth-child(#{$i})
+                    {
+                        animation-delay: $i * 200ms;
+                    }
+                }
+                &:hover .restaurant__menu__flexbox__food-item__box__order-animation
+                {
+                        display: flex;
+                    &__icon
+                    {
+                        animation: icon-animation 0.5s forwards;
+                    }
+                }
+                &:hover .restaurant__menu__flexbox__food-item__box__text__comment__ingredients
+                {
+                    animation: ingredients-ellipsis 0.3s forwards ;
+                }
+                &__box
+                {
+                    height: 3em;
+                    display: flex;
+                    &__text
+                    {
+                        width: 100%;
+                        &__title
+                        {
+                            font-size: 1rem;
+                            margin: 0rem 0rem 0.2rem 0rem;
+                            height: 1rem;
+                        }
+                        &__comment
+                        {
+                            display: flex;
+                            justify-content: space-between;
+                            &__ingredients
+                            {
+                                font-size: 0.9rem;
+                                width: auto;
+                                white-space: nowrap;
+                                overflow: hidden;
+                                text-overflow: ellipsis;
+
+                            }
+                            &__price
+                            {
+                                font-size: 0.9rem;
+                                font-weight: bold;
+                                color: $light-font-color;
+                                margin:0rem 1rem 0rem 0rem;
+                            }
+                        }
+                    }
+                    &__order-animation
+                    {
+                        display: none;
+                        position: relative;
+                        top: -1rem;
+                        height: 4.2rem;
+                        animation: animation-on-order .5s;
+                        &__background
+                        {
+                            background-color: $tertiary-color;
+                            border-radius: 0rem 1rem 1rem 0rem;
+                            padding: 1.3rem 1.3rem 0rem 1.3rem;
+                        }
+                        &__icon
+                        {
+                            background-color: $alt-font-color;
+                            color: $tertiary-color;
+                            padding: 0.2rem;
+                            border-radius: 1rem;
+                        }
+                    }
+                }
+        }
+    }
+    &__order-button
+    {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+}
